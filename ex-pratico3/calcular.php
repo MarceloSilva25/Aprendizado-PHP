@@ -1,23 +1,3 @@
-
-<!-- <?php 
-
-$valor = $_GET['valor'] ?? 0;
-$moeda = $_GET['moedas'] ?? 'USD'; // Corrigido para combinar com o HTML
-
-$taxas = [
-   "USD" => 0.19,
-   "EUR" => 0.18
-];
-
-if(array_key_exists($moeda, $taxas)){
-   $convertido = $valor * $taxas[$moeda];
-   echo "<h2>Resultado da Conversão</h2>";
-   echo "R$ $valor convertido para <strong>$moeda</strong> é <strong>$convertido</strong>";
-} else {
-   echo "Moeda não suportada.";
-}
-?> -->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -31,7 +11,7 @@ if(array_key_exists($moeda, $taxas)){
       <?php 
 
 $valor = $_GET['valor'] ?? 0;
-$moeda = $_GET['moedas'] ?? 'USD'; // Corrigido para combinar com o HTML
+$moeda = $_GET['moedas'] ?? 'USD'; 
 
 $taxas = [
    "USD" => 0.19,
