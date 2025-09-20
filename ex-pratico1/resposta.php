@@ -1,20 +1,38 @@
-<?php
-// Mudança 1: Calcular os valores ANTES do HTML para evitar erro de variável indefinida
-$numero = $_GET['numero'] ?? null; // Mudança 2: Usar operador de coalescência para evitar erro se não enviado
-$antecessor = $numero !== null ? $numero - 1 : ''; // Mudança 3: Só calcula se número foi enviado
-$sucessor = $numero !== null ? $numero + 1 : '';
-?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>execicio PHP</title>
+    <title>exercicio PHP</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
         <h1>Resultado Final</h1>
+<!--Minha solução --> 
+ <!-- 
+        Colodando essa formula antes do HTML
+
+        <?php
+        $numero = $_GET['numero'] ?? null;
+        $antecessor = $numero !== null ? $numero - 1 : '';
+        $sucessor = $numero !== null ? $numero + 1 : '';
+        ?> 
+        
+        E esta no corpo do HTML
+
+ <form action="">
+        <label for="numero">Digite um número:</label>
+        <input type="number" name="numero" id="numero" required>
+        <button type="submit">Calcular</button>
+        <p>O antecessor é: </p> 
+        <p>O sucessor é: </p> 
+    </form> 
+-->
+
+        
+<!--Correção da aula do canal Curso em Video-->
         <p>
             <?php 
                 $n = $_REQUEST["num"];
@@ -28,12 +46,6 @@ $sucessor = $numero !== null ? $numero + 1 : '';
         <button onclick="javascript:window.location.href='index.html'">&#x2b05; Voltar</button>
     </main>
 
-    <!-- <form action="">
-        <label for="numero">Digite um número:</label>
-        <input type="number" name="numero" id="numero" required>
-        <button type="submit">Calcular</button>
-        <p>O antecessor é:</p> 
-        <p>O sucessor é:</p> 
-    </form> -->
+    
 </body> 
 </html>
